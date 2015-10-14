@@ -17,11 +17,11 @@ cc <- c(7,6,6,6,6) # for each type, set a column number used to count the record
 cd <- c(11,6,6,6,6)
 for(ntyp in c(1:length(type))){
   
-  # reorganize the data09[[ntyp]], the ntypth type
+  # reorganize the data14[[ntyp]], the ntypth type
   # and put them in a list and split different items apart.
   tmp <- list()
-  for(i in c(1:length(data09[[ntyp]]))){
-    tmp[[i]] <- strsplit(as.character(data09[[ntyp]][[i]]), split="\r\n") # split the ith column of the ntypth type
+  for(i in c(1:length(data14[[ntyp]]))){
+    tmp[[i]] <- strsplit(as.character(data14[[ntyp]][[i]]), split="\r\n") # split the ith column of the ntypth type
   }
   #print(length(tmp))
   #
@@ -35,7 +35,7 @@ for(ntyp in c(1:length(type))){
   # build a new data.frame to save records separately, dim: num of records, num of columns
   newdf <- data.frame(matrix(NA,len,length(tmp)))
   
-  colnames(newdf) <- names(data09[[ntyp]])
+  colnames(newdf) <- names(data14[[ntyp]])
   
   # now lets put data into the new data frame
   rcount=1
